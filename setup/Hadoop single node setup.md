@@ -16,7 +16,7 @@ Though set up steps are similar for all OS, but I am assuming it to be Ubuntu fo
 
    `sudo apt-get update`
 
-2.  Download Java
+2. Download Java
 
    `sudo apt-get install openjdk-8-jre-headless`
 
@@ -43,7 +43,7 @@ Though set up steps are similar for all OS, but I am assuming it to be Ubuntu fo
 
    ```shell
    wget http://archive.apache.org/dist/hadoop/core/hadoop-<latest-version>
-   tar -xvf hadoop-1.2.0.tar.gz
+   tar -xvf hadoop-<version>.tar.gz
    ```
 
 7. Configure Hadoop 
@@ -78,11 +78,33 @@ Though set up steps are similar for all OS, but I am assuming it to be Ubuntu fo
    
    ```
 
+   **$HADOOP_HOME/etc/hadoop/yarn-site.xml:**
+
+   ```xml
+   <configuration>
+      <property> 
+         <name>yarn.nodemanager.aux-services</name> 
+         <value>mapreduce_shuffle</value> 
+      </property>
+   </configuration>
+   ```
+
+   **$HADOOP_HOME/etc/hadoop/mapred-site.xml:**
+
+   ```xml
+   <configuration>
+      <property> 
+         <name>mapreduce.framework.name</name> 
+         <value>yarn</value> 
+      </property>
+   </configuration>
+   ```
+
 8. open  `$HADOOP_HOME/etc/hadoop/hadoop-env.sh` file and add 
 
    `export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-i38`
 
-9.  Set `HADOOP_HOME` in `.bashrc`
+9. Set `HADOOP_HOME` in `.bashrc`
 
     open  `.bashrc` in `gedit`  and paste below commands at bottom of the file
 

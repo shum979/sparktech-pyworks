@@ -1,0 +1,8 @@
+Hadoop on Browser :
+	localhost:50070
+	
+YARN application master :
+	localhost:8088
+	
+------------------------------
+HADOOP_USER_CLASSPATH_FIRST=true

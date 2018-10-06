@@ -5,4 +5,4 @@ YARN application master :
 	localhost:8088
 	
 ------------------------------
-HADOOP_USER_CLASSPATH_FIRST=true
+export HADOOP_USER_CLASSPATH_FIRST=true

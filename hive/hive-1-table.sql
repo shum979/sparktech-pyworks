@@ -20,7 +20,9 @@ ROW FORMAT DELIMITED
 FIELDS TERMINATED BY '|'
 STORED AS TEXTFILE;
 
-LOAD DATA LOCAL INPATH '/user/shubham/Input_data_set/movie_data.txt' OVERWRITE INTO TABLE movie_data;
+LOAD DATA INPATH '/user/shubham/Input_data_set/movie_data.txt' OVERWRITE INTO TABLE movie_data;
+
+set hive.cli.print.header=true;
 ----------------------------------------------------------------------
 CREATE EXTERNAL TABLE IF NOT EXISTS movie_ratings (
 user_id BIGINT,

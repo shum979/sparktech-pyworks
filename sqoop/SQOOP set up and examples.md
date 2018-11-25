@@ -10,7 +10,7 @@
 
 3. ```shell
    #set sqoop variables in .bashrc
-   export SQOOP_HOME=/usr/lib/sqoop 
+   export SQOOP_HOME=/usr/local/sqoop 
    export PATH=$PATH:$SQOOP_HOME/bin
    
    #run bashrc
